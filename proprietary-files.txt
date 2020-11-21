@@ -77,6 +77,7 @@ vendor/etc/acdbdata/Forte/Forte_Global_cal.acdb|b34ec442b87c1acb88dafd55fd86e77a
 system_ext/etc/permissions/audiosphere.xml
 system_ext/framework/audiosphere.jar
 -vendor/lib/soundfx/libasphere.so
+-vendor/lib/soundfx/libmisoundfx.so
 -vendor/lib/soundfx/libshoebox.so
 
 # Audio HAL
