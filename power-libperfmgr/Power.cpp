@@ -83,6 +83,12 @@ Power::Power()
     }
 }
 
+void endAllHints() {
+    for (std::string hint: HintManager::GetInstance()->GetHints()) {
+        HintManager::GetInstance()->EndHint(hint);
+    }
+}
+
 ndk::ScopedAStatus Power::setMode(Mode type, bool enabled) {
     LOG(DEBUG) << "Power setMode: " << toString(type) << " to: " << enabled;
     if (HintManager::GetInstance()->GetAdpfProfile() &&
@@ -92,9 +98,12 @@ ndk::ScopedAStatus Power::setMode(Mode type, bool enabled) {
     switch (type) {
         case Mode::SUSTAINED_PERFORMANCE:
             if (enabled) {
+                endAllHints();
                 HintManager::GetInstance()->DoHint("SUSTAINED_PERFORMANCE");
+            } else {
+                HintManager::GetInstance()->EndHint("SUSTAINED_PERFORMANCE");
             }
-            mSustainedPerfModeOn = true;
+            mSustainedPerfModeOn = enabled;
             break;
         case Mode::DOUBLE_TAP_TO_WAKE: {
             int fd = open(TOUCH_DEV_PATH, O_RDWR);
@@ -103,9 +112,6 @@ ndk::ScopedAStatus Power::setMode(Mode type, bool enabled) {
             break;
         }
         case Mode::LAUNCH:
-            if (mSustainedPerfModeOn) {
-                break;
-            }
             [[fallthrough]];
         case Mode::FIXED_PERFORMANCE:
             [[fallthrough]];
@@ -120,6 +126,9 @@ ndk::ScopedAStatus Power::setMode(Mode type, bool enabled) {
         case Mode::AUDIO_STREAMING_LOW_LATENCY:
             [[fallthrough]];
         default:
+            if (mSustainedPerfModeOn) {
+                break;
+            }
             if (enabled) {
                 HintManager::GetInstance()->DoHint(toString(type));
             } else {
