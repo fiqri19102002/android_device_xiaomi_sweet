@@ -267,6 +267,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/msm_irqbalance.conf:$(TARGET_COPY_OUT_VENDOR)/etc/msm_irqbalance.conf
 
+# KProfiles
+PRODUCT_PACKAGES += \
+    KProfiles
+
 # Kernel
 PRODUCT_SET_DEBUGFS_RESTRICTIONS := true
 
