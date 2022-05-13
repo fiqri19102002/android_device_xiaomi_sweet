@@ -275,6 +275,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vendor.lineage.livedisplay@2.1-service.xiaomi_sm6150
 
+# KProfiles
+PRODUCT_PACKAGES += \
+    KProfiles
+
 # Media
 PRODUCT_PACKAGES += \
     libavservices_minijail.vendor \
