@@ -1,2 +1,5 @@
 # Data files
 type per_boot_file, file_type, data_file_type, core_data_file_type;
+
+# Kprofiles
+type sysfs_kprofiles, sysfs_type, fs_type;
