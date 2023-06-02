@@ -82,7 +82,6 @@ on post-fs-data
 
     # Create fingerprint related directory
     mkdir /data/vendor/fpc 0770 system system
-    mkdir /data/vendor/goodix 0770 system system
     mkdir /mnt/vendor/persist/fpc 0770 system system
     mkdir /data/vendor/fpdump 0770 system system
 
@@ -118,10 +117,8 @@ on boot
 
     chown system system /sys/bus/platform/devices/soc/soc:fpc1020/irq
     chown system system /sys/bus/platform/devices/soc/soc:fpc1020/wakeup_enable
-    chown system system /sys/devices/platform/soc/soc:qcom,dsi-display/fod_ui
 
     # Create fingerprint related directory
-    mkdir /mnt/vendor/persist/goodix 0770 system system
     mkdir /mnt/vendor/persist/fpc 0770 system system
 
 on property:sys.boot_completed=1

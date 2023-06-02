@@ -379,10 +379,6 @@ PRODUCT_PACKAGES += \
     librilutils \
     librmnetctl
 
-# Recovery
-PRODUCT_PACKAGES += \
-    librecovery_updater_xiaomi
-
 PRODUCT_PACKAGES += \
     init.recovery.qcom.rc
 

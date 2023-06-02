@@ -9,9 +9,6 @@
 /dev/block/platform/soc/1d84000\.ufshc/by-name/cust                  u:object_r:system_block_device:s0
 /dev/block/platform/soc/1d84000\.ufshc/by-name/system                u:object_r:system_block_device:s0
 /dev/block/platform/soc/1d84000\.ufshc/by-name/vendor                u:object_r:system_block_device:s0
-/dev/block/platform/soc/7c4000\.sdhci/by-name/cust                   u:object_r:system_block_device:s0
-/dev/block/platform/soc/7c4000\.sdhci/by-name/system                 u:object_r:system_block_device:s0
-/dev/block/platform/soc/7c4000\.sdhci/by-name/vendor                 u:object_r:system_block_device:s0
 
 # Camera
 /mnt/vendor/persist/camera(/.*)?                                     u:object_r:vendor_persist_camera_file:s0
@@ -23,26 +20,19 @@
 /dev/xiaomi-touch                                                    u:object_r:touchfeature_device:s0
 /sys/devices/platform/soc/[a-f0-9]+.qcom,mdss_mdp/drm/card([0-3])+/card([0-3])+-DSI-1/panel_info u:object_r:vendor_sysfs_graphics:s0
 /sys/devices/platform/soc/soc:qcom,dsi-display/dc_enable             u:object_r:sysfs_anti_flicker:s0
-/sys/devices/platform/soc/soc:qcom,dsi-display/fod_ui                u:object_r:vendor_sysfs_fod:s0
 /sys/devices/platform/soc/soc:qcom,dsi-display/hbm                   u:object_r:sysfs_hbm:s0
 /sys/devices/platform/soc/soc:qcom,dsi-display/doze_mode             u:object_r:sysfs_doze:s0
 
 # Fingerprint
-/dev/goodix_fp                                                       u:object_r:fingerprint_device:s0
 /data/vendor/fpc(/.*)?                                               u:object_r:fingerprint_data_file:s0
-/data/vendor/fpdump(/.*)?                                            u:object_r:fingerprint_data_file:s0
-/data/vendor/goodix(/.*)?                                            u:object_r:fingerprint_data_file:s0
-/sys/devices/virtual/touch/tp_dev/fp_state                           u:object_r:vendor_sysfs_sensors:s0
 
 # HALs
 /(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.3-service\.xiaomi u:object_r:hal_fingerprint_default_exec:s0
-/vendor/bin/hw/android\.hardware\.light@2\.0-service\.xiaomi_sm6150        u:object_r:hal_light_default_exec:s0
 /vendor/bin/hw/android\.hardware\.power-service\.xiaomi-libperfmgr         u:object_r:hal_power_default_exec:s0
 /vendor/bin/hw/vendor\.lineage\.livedisplay@2\.1-service\.xiaomi_sm6150    u:object_r:hal_lineage_livedisplay_qti_exec:s0
 
 # IR
 /dev/ir_spi                                                          u:object_r:vendor_ir_device:s0
-/dev/spidev[0-9]\.1                                                  u:object_r:lirc_device:s0
 
 # Persist subsystem
 /mnt/vendor/persist/subsys(/.*)?                                  u:object_r:persist_subsys_file:s0
