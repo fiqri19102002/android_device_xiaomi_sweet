@@ -89,6 +89,7 @@ TARGET_RECOVERY_DEVICE_MODULES := libinit_sweet
 
 # Kernel
 BOARD_KERNEL_BASE := 0x00000000
+BOARD_KERNEL_IMAGE_NAME := Image.gz
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_SEPARATED_DTBO := true
 
@@ -104,23 +105,9 @@ BOARD_KERNEL_CMDLINE += service_locator.enable=1
 BOARD_KERNEL_CMDLINE += lpm_levels.sleep_disabled=1
 BOARD_KERNEL_CMDLINE += loop.max_part=7
 
-# TARGET_KERNEL_APPEND_DTB handling
-ifeq ($(strip $(PRODUCT_USE_DYNAMIC_PARTITIONS)),true)
-BOARD_KERNEL_IMAGE_NAME := Image.gz
-TARGET_KERNEL_APPEND_DTB := false
-else
-BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
-TARGET_KERNEL_APPEND_DTB := true
-endif
-
-# Set header version for bootimage
-ifneq ($(strip $(TARGET_KERNEL_APPEND_DTB)),true)
 # Enable DTB in bootimage and set header version
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_BOOTIMG_HEADER_VERSION := 2
-else
-BOARD_BOOTIMG_HEADER_VERSION := 1
-endif
 BOARD_MKBOOTIMG_ARGS := --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
 
 # Media
@@ -197,7 +184,6 @@ TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
 ENABLE_VENDOR_RIL_SERVICE := true
 
 # Releasetools
-TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_xiaomi
 TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)
 
 # Screen density
