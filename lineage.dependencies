@@ -2,9 +2,5 @@
   {
     "repository": "android_kernel_xiaomi_sweet",
     "target_path": "kernel/xiaomi/sweet"
-  },
-  {
-    "repository": "android_hardware_xiaomi",
-    "target_path": "hardware/xiaomi"
   }
 ]
