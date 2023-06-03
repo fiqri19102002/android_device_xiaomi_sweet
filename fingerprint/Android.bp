@@ -6,10 +6,10 @@
 //
 
 cc_binary {
-    name: "android.hardware.biometrics.fingerprint@2.3-service.xiaomi",
+    name: "android.hardware.biometrics.fingerprint@2.3-service.sweet",
     defaults: ["hidl_defaults"],
-    init_rc: ["android.hardware.biometrics.fingerprint@2.3-service.xiaomi.rc"],
-    vintf_fragments: ["android.hardware.biometrics.fingerprint@2.3-service.xiaomi.xml"],
+    init_rc: ["android.hardware.biometrics.fingerprint@2.3-service.sweet.rc"],
+    vintf_fragments: ["android.hardware.biometrics.fingerprint@2.3-service.sweet.xml"],
     vendor: true,
     relative_install_path: "hw",
     srcs: [
@@ -29,11 +29,11 @@ cc_binary {
         "android.hardware.biometrics.fingerprint@2.3",
     ],
 
-    header_libs: ["xiaomifingerprint_headers"],
+    header_libs: ["xiaomifingerprint_headers.sweet"],
 }
 
 cc_library_headers {
-    name: "xiaomifingerprint_headers",
+    name: "xiaomifingerprint_headers.sweet",
     export_include_dirs: ["include"],
     vendor: true,
     header_libs: ["libhardware_headers"],
