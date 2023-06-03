@@ -113,15 +113,6 @@
       "ResetOnInit": true
     },
     {
-      "Name": "TASchedtuneHighCap",
-      "Path": "/dev/stune/top-app/schedtune.prefer_high_cap",
-      "Values": [
-        "1",
-        "0"
-      ],
-      "ResetOnInit": true
-    },
-    {
       "Name": "TASchedtunePreferIdle",
       "Path": "/dev/stune/top-app/schedtune.prefer_idle",
       "Values": [
@@ -143,15 +134,6 @@
     {
       "Name": "CDSchedtuneBoost",
       "Path": "/dev/stune/camera-daemon/schedtune.boost",
-      "Values": [
-        "1",
-        "0"
-      ],
-      "ResetOnInit": true
-    },
-    {
-      "Name": "CDSchedtuneHighCap",
-      "Path": "/dev/stune/camera-daemon/schedtune.prefer_high_cap",
       "Values": [
         "1",
         "0"
@@ -363,12 +345,6 @@
     },
     {
       "PowerHint": "INTERACTION",
-      "Node": "TASchedtuneHighCap",
-      "Duration": 0,
-      "Value": "1"
-    },
-    {
-      "PowerHint": "INTERACTION",
       "Node": "CPUBWHystTriggerCount",
       "Duration": 0,
       "Value": "0"
@@ -572,12 +548,6 @@
       "Value": "1"
     },
     {
-      "PowerHint": "CAMERA_STREAMING_MID",
-      "Node": "CDSchedtuneHighCap",
-      "Duration": 0,
-      "Value": "1"
-    },
-    {
       "PowerHint": "CAMERA_STREAMING_HIGH",
       "Node": "CDCpuset",
       "Duration": 0,
@@ -592,12 +562,6 @@
     {
       "PowerHint": "CAMERA_STREAMING_HIGH",
       "Node": "CDSchedtuneBoost",
-      "Duration": 0,
-      "Value": "1"
-    },
-    {
-      "PowerHint": "CAMERA_STREAMING_HIGH",
-      "Node": "CDSchedtuneHighCap",
       "Duration": 0,
       "Value": "1"
     },
