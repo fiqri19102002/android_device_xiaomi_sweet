@@ -89,9 +89,11 @@ system_ext/framework/audiosphere.jar
 
 # Audio HAL
 -vendor/lib/hw/audio.primary.sm6150.so
+-vendor/lib/libadm.so
 -vendor/lib/libaudio_log_utils.so
 -vendor/lib/libaudioparsers.so
 -vendor/lib/libaudioroute_ext.so
+-vendor/lib/libqtigef.so
 
 # Awinic firmware
 vendor/firmware/awinic/aw882xx_pid_1852_acf.bin
