@@ -42,10 +42,10 @@ LOCAL_SRC_FILES := \
 
 LOCAL_CFLAGS := -Wno-unused-parameter -Wno-unused-variable
 
-LOCAL_MODULE := android.hardware.power-service.xiaomi-libperfmgr
-LOCAL_INIT_RC := android.hardware.power-service.xiaomi-libperfmgr.rc
+LOCAL_MODULE := android.hardware.power-service.sweet-libperfmgr
+LOCAL_INIT_RC := android.hardware.power-service.sweet-libperfmgr.rc
 LOCAL_MODULE_TAGS := optional
 LOCAL_VENDOR_MODULE := true
-LOCAL_VINTF_FRAGMENTS := android.hardware.power-service.xiaomi.xml
+LOCAL_VINTF_FRAGMENTS := android.hardware.power-service.sweet.xml
 
 include $(BUILD_EXECUTABLE)
