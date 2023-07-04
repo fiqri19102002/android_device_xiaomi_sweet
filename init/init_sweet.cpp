@@ -84,6 +84,7 @@ void vendor_load_properties() {
     std::string fingerprint;
     std::string description;
     std::string mod_device;
+    std::string marketname;
 
     if (region == "GLOBAL") {
         model = "M2101K6G";
@@ -91,6 +92,7 @@ void vendor_load_properties() {
         fingerprint = "Redmi/sweet_global/sweet:13/TKQ1.221013.002/V14.0.8.0.TKFMIXM:user/release-keys";
         description = "sweet_global-user 13 TKQ1.221013.002 V14.0.8.0.TKFMIXM release-keys";
         mod_device = "sweet_global";
+        marketname = "Redmi Note 10 Pro";
         property_override("ro.boot.product.hardware.sku", "sweet");
     } else if (region == "JAPAN") {
         model = "M2101K6R";
@@ -98,6 +100,7 @@ void vendor_load_properties() {
         fingerprint = "Redmi/sweet_global/sweet:13/TKQ1.221013.002/V14.0.8.0.TKFMIXM:user/release-keys";
         description = "sweet_global-user 13 TKQ1.221013.002 V14.0.8.0.TKFMIXM release-keys";
         mod_device = "sweet_global";
+        marketname = "Redmi Note 10 Pro";
         property_override("ro.boot.product.hardware.sku", "sweet");
     } else if (region == "INDIA") {
         if (sku == "std") {
@@ -106,18 +109,21 @@ void vendor_load_properties() {
             fingerprint = "Redmi/sweetin/sweetin:13/TKQ1.221013.002/V14.0.1.0.TKFINXM:user/release-keys";
             description = "sweetin-user 13 TKQ1.221013.002 V14.0.1.0.TKFINXM release-keys";
             mod_device = "sweetin_in_global";
+            marketname = "Redmi Note 10 Pro";
         } else {
             model = "M2101K6I";
             device = "sweetin";
             fingerprint = "Redmi/sweetinpro/sweetin:13/TKQ1.221013.002/V14.0.1.0.TKFINXM:user/release-keys";
             description = "sweetinpro-user 13 TKQ1.221013.002 V14.0.1.0.TKFINXM release-keys";
             mod_device = "sweetin_in_global";
+            marketname = "Redmi Note 10 Pro Max";
         }
     }
 
     set_ro_build_prop("fingerprint", fingerprint);
     set_ro_product_prop("device", device);
     set_ro_product_prop("model", model);
+    property_override("bluetooth.device.default_name", marketname.c_str());
     property_override("ro.build.description", description.c_str());
     if (mod_device != "") {
         property_override("ro.product.mod_device", mod_device.c_str());
