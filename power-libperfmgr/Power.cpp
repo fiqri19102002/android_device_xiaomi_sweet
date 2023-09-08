@@ -41,7 +41,7 @@
 
 #define Touch_Doubletap_Mode 14
 
-#define KPROFILES_NODE "/sys/module/kprofiles/parameters/kp_mode"
+#define KPROFILES_NODE "/sys/kernel/kprofiles/kp_mode"
 
 namespace aidl {
 namespace google {
