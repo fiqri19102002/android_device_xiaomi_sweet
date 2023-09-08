@@ -29,7 +29,7 @@
 #define TOUCH_IOC_SETMODE TOUCH_MAGIC + SET_CUR_VALUE
 
 // defines mode path of KProfiles
-#define KPROFILES_PATH "/sys/module/kprofiles/parameters/kp_mode"
+#define KPROFILES_PATH "/sys/kernel/kprofiles/kp_mode"
 
 namespace aidl {
 namespace google {
