@@ -192,7 +192,7 @@ SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 
 # Vendor security patch level
-VENDOR_SECURITY_PATCH := 2023-06-01
+VENDOR_SECURITY_PATCH := 2023-09-01
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
