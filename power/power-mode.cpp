@@ -28,6 +28,9 @@
 #define TOUCH_MAGIC 0x5400
 #define TOUCH_IOC_SETMODE TOUCH_MAGIC + SET_CUR_VALUE
 
+// defines mode path of KProfiles
+#define KPROFILES_PATH "/sys/module/kprofiles/parameters/kp_mode"
+
 namespace aidl {
 namespace google {
 namespace hardware {
@@ -36,10 +39,12 @@ namespace impl {
 namespace pixel {
 
 using ::aidl::android::hardware::power::Mode;
+using ::android::base::WriteStringToFile;
 
 bool isDeviceSpecificModeSupported(Mode type, bool* _aidl_return) {
     switch (type) {
         case Mode::DOUBLE_TAP_TO_WAKE:
+        case Mode::LOW_POWER:
             *_aidl_return = true;
             return true;
         default:
@@ -56,6 +61,9 @@ bool setDeviceSpecificMode(Mode type, bool enabled) {
             close(fd);
             return true;
         }
+        case Mode::LOW_POWER:
+            WriteStringToFile(enabled ? "1" : "0", KPROFILES_PATH, true);
+            return true;
         default:
             return false;
     }
