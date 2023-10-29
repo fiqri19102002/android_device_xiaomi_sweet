@@ -84,6 +84,7 @@ vendor/etc/acdbdata/adsp_avs_config.acdb
 system_ext/etc/permissions/audiosphere.xml
 system_ext/framework/audiosphere.jar
 -vendor/lib/soundfx/libasphere.so
+-vendor/lib/soundfx/libmisoundfx.so
 -vendor/lib/soundfx/libshoebox.so
 
 # Audio HAL
