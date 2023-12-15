@@ -88,12 +88,12 @@ system_ext/framework/audiosphere.jar
 
 # Audio HAL
 -vendor/lib/hw/audio.primary.sm6150.so
+-vendor/lib/vndk/libxlog.so
 -vendor/lib/libadm.so
 -vendor/lib/libaudio_log_utils.so
 -vendor/lib/libaudioparsers.so
 -vendor/lib/libaudioroute_ext.so
 -vendor/lib/libqtigef.so
--vendor/lib/vndk/libxlog.so
 
 # Audio extensions
 -vendor/lib/btaudio_offload_if.so
